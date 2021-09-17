@@ -174,6 +174,8 @@ func main() {
 	dataTofile += "address: " + address + "\n"
 
 	photo, _ := getPhoto(card, cmdReq)
+
+	os.Mkdir("image", 0755)
 	err = ioutil.WriteFile("./image/"+cid+".jpg", photo, 0664)
 	if err != nil {
 		fmt.Printf("Error write photo: %+v", err)
